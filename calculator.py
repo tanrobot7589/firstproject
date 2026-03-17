@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import messagebox
 
 class Calculator:
     def __init__(self, master):
@@ -6,6 +7,9 @@ class Calculator:
         self.master.title("Avyan's Calculator")
 
         self.result_var = tk.StringVar()
+
+        # Show welcome pop-up
+        messagebox.showinfo("Welcome", "Welcome to Avyan's Calculator")
 
         self.create_widgets()
 
@@ -38,6 +42,8 @@ class Calculator:
                 expression = self.result_var.get()
                 result = eval(expression)
                 self.result_var.set(result)
+                # Show result pop-up
+                messagebox.showinfo("Result", "Avyan is Bongi")
             except Exception as e:
                 self.result_var.set('Error')
         else:
